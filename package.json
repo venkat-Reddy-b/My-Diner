@@ -1,0 +1,19 @@
+{
+  "name": "myfoodbay_t",
+  "version": "1.0.0",
+  "description": "online food ordering application",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "Venkat Reddy",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.0.0-beta.1"
+  },
+  "dependencies": {
+    "core-js": "^3.16.0",
+    "regenerator-runtime": "^0.13.9"
+  }
+}

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="src/img/favicon.png" type="image/x-icon" />
+
+    <link rel="stylesheet" href="src/css/main.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <script defer src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    <script defer src="src/js/controller.js"></script>
+    <title>MyDiner // Search for dishes and Restaurants</title>
+  </head>
+
+  <body>
+      <div class="content">
+        <div class="container">
+          <header class="header">
+            <img src="src/img/logo.png" alt="Logo" class="header__logo" />
+            <form class="search">
+              <input
+                type="text"
+                class="search__field"
+                placeholder="Search for dishes and Restaurants...."
+              />
+              <button class="btn search__btn">
+                <svg class="search__icon">
+                  <use href="src/img/icons.svg#icon-search"></use>
+                </svg>
+                <span>Search</span>
+              </button>
+            </form>
+  
+            <nav class="nav">
+              <ul class="nav__list">
+                <li class="nav__item">
+                  <button class="nav__btn nav__btn--add-food">
+                    <svg class="nav__icon">
+                      <use href="src/img/icons.svg#icon-user"></use>
+                    </svg>
+                    <span>Profile</span>
+                  </button>
+                </li>
+                <li class="nav__item">
+                  <button class="nav__btn nav__btn--bookmarks">
+                    <svg class="nav__icon">
+                      <use href="src/img/icons.svg#icon-bookmark"></use>
+                    </svg>
+                    <span>Bookmarks</span>
+                  </button>
+                  <div class="bookmarks">
+                    <ul class="bookmarks__list">
+                      <div class="message">
+                        <div>
+                          <svg>
+                            <use href="src/img/icons.svg#icon-smile"></use>
+                          </svg>
+                        </div>
+                        <p>
+                          No bookmarks yet. Find a nice dish and bookmark it :)
+                        </p>
+                      </div>
+                      
+  
+                      <!-- <li class="preview">
+                        
+                        <a class="preview__link" href="#23456">
+                          <figure class="preview__fig">
+                            <img src="src/img/test-1.jpg" alt="Test" />
+                          </figure>
+                          <div class="preview__data">
+                            <h4 class="preview__name">
+                              Pasta with Tomato Cream ...
+                            </h4>
+                            <p class="preview__publisher">The Pioneer Woman</p>
+                          </div>
+                        </a>
+                      </li> -->
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </header>
+  
+          <div class="search-results">
+            <ul class="results">
+              <!-- <a href="#106003f1v">food1</a>
+              <a href="#106003f1n">food2</a>
+              <a href="#106003f2v">food3</a> -->
+              <!-- <li class="preview">
+                <a class="preview__link preview__link--active" href="#23456">
+                  <figure class="preview__fig">
+                    <img src="src/img/test-1.jpg" alt="Test" />
+                  </figure>
+                  <div class="preview__data">
+                    <h4 class="preview__title">Veg Manchurian</h4>
+                    <p class="preview__publisher">Bawarchi</p>
+                    <div class="preview__user-generated">
+                      <svg>
+                        <use href="src/img/icons.svg#icon-user"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </a>
+              </li> -->
+              
+            </ul>
+  
+            <div class="pagination">
+              <!-- <button class="btn--inline pagination__btn--prev">
+                <svg class="search__icon">
+                  <use href="src/img/icons.svg#icon-arrow-left"></use>
+                </svg>
+                <span>Page 1</span>
+              </button>
+              <button class="btn--inline pagination__btn--next">
+                <span>Page 3</span>
+                <svg class="search__icon">
+                  <use href="src/img/icons.svg#icon-arrow-right"></use>
+                </svg>
+              </button> -->
+            </div>
+             <p class="copyright">
+            &copy; Copyright by
+            Venkat Reddy
+            </p>
+          </div>
+  
+          <div class="food">
+  
+            <div class="food">
+              <div class="message">
+                <div>
+                  <svg>
+                    <use href="src/img/icons.svg#icon-smile"></use>
+                  </svg>
+                </div>
+                <p>Start by searching for a Dish or a Restaurant. Have fun!</p>
+              </div>
+            </div>  
+            <!-- <div class="spinner">
+              <svg>
+                <use href="src/img/icons.svg#icon-loader"></use>
+              </svg>
+            </div> -->
+  
+            <!-- <div class="error">
+                <div>
+                  <svg>
+                    <use href="src/img/icons.svg#icon-alert-triangle"></use>
+                  </svg>
+                </div>
+                <p>No foods found for your query. Please try again!</p>
+              </div> -->
+  
+  
+            <!-- -------------------------------------------------------------- -->
+  
+            <!-- <figure class="food__fig">
+              <img src="src/img/test-1.jpg" alt="" class="food__img" />
+              <h1 class="food__title">
+                <span>Pasta with tomato cream sauce</span>
+              </h1>
+            </figure>
+  
+            <div class="food__details">
+              <div class="food__info">
+                <svg class="food__info-icon">
+                  <use href="src/img/icons.svg#icon-clock"></use>
+                </svg>
+                <span class="food__info-text">Delivery in &nbsp</span>
+                <span class="food__info-data food__info-data--minutes">&nbsp 45mins</span>
+              </div>
+              <div class="food__info">
+                <svg class="food__info-icon">
+                  <use href="src/img/icons.svg#icon-users"></use>
+                </svg>
+                <span class="food__info-data food__info-data--people">4</span>
+                <span class="food__info-text">ADDED</span>
+              </div>
+              <div class="food__user-generated">
+                <svg>
+                  <use href="src/img/icons.svg#icon-user"></use>
+                </svg>
+              </div>
+              <button class="btn--round">
+                <svg class="">
+                  <use href="src/img/icons.svg#icon-bookmark-fill"></use>
+                </svg>
+              </button>
+            </div>
+  
+            <div class="food__properties">
+              <h2 class="heading--1"> Restaurant : Bawarchi</h2>
+              <h2 class="heading--1">Food Type : VEG </h2>
+              <h2 class="heading--2">Prices</h2>
+              <ul class="food__property-list">
+                <li class="food__property">
+                  <svg class="food__icon">
+                    <use href="src/img/icons.svg#icon-check"></use>
+                  </svg>
+                  <div class="food__description">
+                    <span class="food__unit"><b>Full &nbsp</b></span>
+                  </div>
+                  <div class="food__quantity">160Rs</div>
+                  <div class="food__info-buttons">
+                    <button class="btn--tiny btn--increase-servings">
+                      <svg>
+                        <use href="src/img/icons.svg#icon-plus-circle"></use>
+                      </svg>
+                    </button>
+                    <button class="btn--tiny btn--increase-servings">
+                      <svg>
+                        <use href="src/img/icons.svg#icon-minus-circle"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </li>
+  
+                <li class="food__property">
+                  <svg class="food__icon">
+                    <use href="src/img/icons.svg#icon-check"></use>
+                  </svg>
+                  <div class="food__description">
+                    <span class="food__unit"><b>Half &nbsp</b></span>
+                  </div>
+                  <div class="food__quantity">80Rs</div>
+                  <div class="food__info-buttons">
+                    <button class="btn--tiny btn--increase-servings">
+                      <svg>
+                        <use href="src/img/icons.svg#icon-plus-circle"></use>
+                      </svg>
+                    </button>
+                    <button class="btn--tiny btn--increase-servings">
+                      <svg>
+                        <use href="src/img/icons.svg#icon-minus-circle"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </li>
+              </ul>
+              <h2 class="heading--2">Reviews</h2>
+              <div>
+                <ul>
+                  <li>
+                    <p class = "food-review">The food is really great</p>
+                  </li>
+                  <li>
+                    <p class = "food-review">The food is really great</p>
+                  </li>
+                </ul>
+              </div>
+            </div>-->
+          </div> 
+  <!-- ------------------------------------------------------------------------------------- -->
+          <div class="food__orders">
+            <h2 class="heading--2">CART DETAILS</h2>
+            <div class="order_details">
+              <p class="food__orders-text">
+                your cart is empty!!!
+              </p>
+            </div>
+            <button class="btn--small clear__cart">
+              clear cart
+            </button>
+            <a class="btn--small food__btn">
+              <span class="">
+                <p class="total-prc">₹<span class="disp-tot-prc">0</span><span>.0</span> &nbsp</p>
+                <p class="total-mark">Total&nbsp</p>
+              </span>
+              <span class="place-order">Place Order</span>
+              <svg class="search__icon">
+                <use href="src/img/icons.svg#icon-arrow-right"></use>
+              </svg>
+            </a>
+          </div> 
+        </div> 
+  
+  
+        <div class="overlay hidden"></div>
+        <div class="add-food-window hidden">
+          <button class="btn--close-modal">&times;</button>
+           <form class="upload">
+             <div class="upload__column">
+                <h3 class="upload__heading">Profile</h3>
+                <label>First Name</label>
+                <input placeholder=" Ex:Venkat" required name="First Name" type="text" />
+                <label>Last Name</label>
+                <input placeholder="" required name="Last Name" type="text" />
+                <label>Mail</label>
+                <input placeholder="venkat123@mail.com" required name="Mail" type="text" />
+                <h3 class="upload__heading">Enter Adress Manually or select your location</h3>
+                <label>Address Line 1</label>
+                <input placeholder=""  name="line 1" type="text" />
+                <label>Line 2 </label>
+                <input placeholder=""  name="line 2" type="text" />
+              </div>
+              <div id="map">
+              </div>
+  
+            <button class="btn location__btn">
+              <span>select Location</span>
+            </button>
+            <button class="btn submit__prof">
+              <span class="submit__profile">submit</span>
+            </button>
+          </form>
+        </div>
+      </div>
+  </body>
+</html>
