@@ -1,6 +1,10 @@
 
 # My Diner
 
+## Access the MyDiner
+
+https://venkat-mydiner-106ab.netlify.app/
+
 ## Intro
 
 Developed a front end web application using JavaScript, HTML,CSS to allow user to select food from menu of different Restaurants and add items to cart to place a order.
@@ -9,8 +13,18 @@ It displays price , quantity and delivery time of order so that user can adjust 
 
 User can create profile and add address manually or can allow the application to get location which displays his current location on a map so the user can adjust the location on map.
 
+It requestes the API server I built. The API server I built consist of 40 dishes from 6 resataurants . The server provieds the request with relevant response.
+
 
 ## Demo
+
+### How to use
+
+Search with dishes like manchuria, panner etc or Restaurand names like Bawarchi, kritunga etc
+
+as it reruest the server I built it only provieds the 40 dishes and 6 restaurants details that I have hosted on my server
+
+
 
 ### Screenshot1
 
